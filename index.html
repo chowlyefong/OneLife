@@ -13,7 +13,7 @@
 <script src="jquery.ui.datepicker.mobile.js"></script>
 -->
 <!-- for script font type in title -->
-<link rel='stylesheet' href='css/css_family_Pacifico.css'  type='text/css' /> <!-- http://fonts.googleapis.com/css?family=Pacifico -->
+<link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Pacifico'  type='text/css' /> <!-- http://fonts.googleapis.com/css?family=Pacifico -->
 <link rel='stylesheet' href='css/css_family_Jomhuria.css'  type='text/css' /> <!-- http://fonts.googleapis.com/css?family=Jomhuria -->
 <link rel="stylesheet" href="css/ownCss.css" />
 <script language="javascript">
@@ -57,8 +57,7 @@
  }
 </script>
 <!-- for Google Map -->
-<!-- <script src="script/googleMap.js"></script> -->
-<script src="http://maps.google.com/maps/api/js?sensor=false"></script>
+<script src="http://maps.google.com/maps/api/js?sensor=false"></script>  <!-- http://maps.google.com/maps/api/js?sensor=false -->
 <!-- for Doughnut chart under My Account -->
 <script src="script/Chart.bundle.js"></script>  <!-- http://www.chartjs.org/dist/2.7.1/Chart.bundle.js -->
 <script src="script/utils.js"></script>  <!-- http://www.chartjs.org/samples/latest/utils.js -->
@@ -797,7 +796,7 @@
 		var bal = parseInt(window.document.getElementById('safeSpend').innerText); 
 		var expense = parseInt(window.document.getElementById('totalExp').innerText); 
 		var expAmt = parseInt(window.document.getElementById('amtExp').value); 
-		if (expDate >= today && parseInt(mth) == 11){ 
+		if (expDate >= today && parseInt(mth) == 11)){ 
 			window.document.getElementById('safeSpend').innerText = bal - expAmt;
 			window.document.getElementById('totalExp').innerText = expense + expAmt;
 			//reflect Safe-to-Spend in My Account page
@@ -1519,14 +1518,14 @@
 		<td width="10%"><a href="#message" data-icon="delete" data-iconpos="notext" data-role="button" onClick="
 		window.document.getElementById('msg7').style.display = 'none';
 		">Delete</a></td>
-		<td width="20%">05 Dec 17</td>
+		<td width="20%">24 Nov 17</td>
 		<td width="70%"><a href="#" >Your queue ticket number for <span id="msgBrTitle7"></span></a></td>
 	</tr></table></div>
 	<div id="msg8" style="display:none"><table class="msg"><tr>
 		<td width="10%"><a href="#message" data-icon="delete" data-iconpos="notext" data-role="button" onClick="
 		window.document.getElementById('msg8').style.display = 'none';
 		">Delete</a></td>
-		<td width="20%">05 Dec 17</td>
+		<td width="20%">24 Nov 17</td>
 		<td width="70%"><a href="#" >Your queue ticket number for <span id="msgBrTitle8"></span></a></td>
 	</tr></table></div>
 	</div>
