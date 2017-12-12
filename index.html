@@ -42,6 +42,7 @@
  var cWorldlimit = 30000;
  
  function initializeMap() {
+			//web Map
             var myLatlng = new google.maps.LatLng( 3.150113, 101.696178 );
             var myOptions = {
                 zoom: 15,
@@ -54,7 +55,56 @@
 			var myMarker2 = new google.maps.Marker({position: new google.maps.LatLng(3.160248, 101.736942), map: mapLoad, title: 'OCBC Jalan Ampang' });
 			myMarker2.setMap(mapLoad);
 			
+			//Cordova plugin Google Map
+			var map;
+			document.addEventListener("deviceready", function() {
+				var div = document.getElementById("map_canvas");
+
+				// Initialize the map view
+				map = plugin.google.maps.Map.getMap(div);
+
+				// Wait until the map is ready status.
+				map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+			}, false);
  }
+ 
+ //Cordova plugin Google Map
+ function onMapReady() {
+  var button = document.getElementById("button");
+  button.addEventListener("click", onButtonClick);
+}
+
+function onButtonClick() {
+
+  // Move to the position with animation
+  map.animateCamera({
+    target: {lat: 3.150113, lng: 101.696178},
+    zoom: 15,
+    tilt: 60,
+    bearing: 140,
+    duration: 5000
+  }, function() {
+
+    // Add a maker
+    map.addMarker({
+      position: {lat: 3.150113, lng: 101.696178},
+      title: "OCBC KL Main",
+      snippet: "OCBC KL Main Branch @ Jalan Tun Perak",
+      animation: plugin.google.maps.Animation.BOUNCE
+    }, function(marker) {
+
+      // Show the info window
+      marker.showInfoWindow();
+
+      // Catch the click event
+      marker.on(plugin.google.maps.event.INFO_CLICK, function() {
+
+        // To do something...
+
+      });
+    });
+  });
+}
 </script>
 <!-- for Google Map -->
 <script src="http://maps.google.com/maps/api/js?key=AIzaSyASwH0oIUHsKbbzb0meiScc0QQ1-Ze5jTc&callback=initializeMap&sensor=false"></script>  <!-- http://maps.google.com/maps/api/js?sensor=false -->
