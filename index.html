@@ -44,11 +44,11 @@
  var c365limit = 20000;
  var cWorldlimit = 30000;
  
+ var map;
  function initializeMap() {
 	var detectPlatform = window.navigator.userAgent;
 	if(detectPlatform.indexOf('Android') > 0 || detectPlatform.indexOf('Mobile') > 0){			
 		//Cordova plugin Google Map
-		var map;
 		document.addEventListener("deviceready", function() {
 			var div = document.getElementById("map_canvas");
 
@@ -99,10 +99,10 @@ function onButtonClick() {
 
     // Add a maker
     map.addMarker({
-      position: {lat: 3.150113, lng: 101.696178},
-      title: "OCBC KL Main",
-      snippet: "OCBC KL Main Branch @ Jalan Tun Perak",
-      animation: plugin.google.maps.Animation.BOUNCE
+      'position': {lat: 3.150113, lng: 101.696178},
+      'title': "OCBC KL Main",
+      'snippet': "OCBC KL Main Branch @ Jalan Tun Perak",
+      'animation': plugin.google.maps.Animation.BOUNCE
     }, function(marker) {
 
       // Show the info window
