@@ -82,17 +82,18 @@
 
 function onButtonClick() {
   // Move to the position with animation
+  var ocbcklmain = new plugin.google.maps.LatLng(3.150113, 101.696178);
   map.animateCamera({
-    target: {lat: 3.150113, lng: 101.696178},
-    zoom: 17,
-	bearing: 0,
-	tilt: 0,
-	duration: 5000
+    'target': ocbcklmain,
+    'zoom': 17,
+	'bearing': 0,
+	'tilt': 0,
+	'duration': 5000
   }, function() {
 
     // Add a maker
     map.addMarker({
-      position: {lat: 3.150113, lng: 101.696178},
+      position: ocbcklmain,
       title: "OCBC KL Main",
       snippet: "OCBC KL Main Branch @ Jalan Tun Perak",
       animation: plugin.google.maps.Animation.BOUNCE
