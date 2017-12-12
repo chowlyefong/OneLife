@@ -81,14 +81,10 @@
 }
 
 function onButtonClick() {
-	alert("load map");
   // Move to the position with animation
   map.animateCamera({
     target: {lat: 3.150113, lng: 101.696178},
-    zoom: 15,
-    tilt: 60,
-    bearing: 140,
-    duration: 5000
+    zoom: 15
   }, function() {
 
     // Add a maker
