@@ -46,7 +46,7 @@
 	if(detectPlatform.indexOf('Android') > 0 || detectPlatform.indexOf('Mobile') > 0){			
 		//Cordova plugin Google Map
 		var map;
-		document.addEventListener("deviceready", function() {
+		//document.addEventListener("deviceready", function() {
 			var div = document.getElementById("map_canvas");
 
 			// Initialize the map view
@@ -54,7 +54,7 @@
 
 			// Wait until the map is ready status.
 			map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
-		}, false);
+		//}, false);
 	}else{
 		//web Map
 		var myLatlng = new google.maps.LatLng( 3.150113, 101.696178 );
@@ -78,7 +78,7 @@
 }
 
 function onButtonClick() {
-
+	alert("load map");
   // Move to the position with animation
   map.animateCamera({
     target: {lat: 3.150113, lng: 101.696178},
