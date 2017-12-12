@@ -9,17 +9,30 @@
     <author href="https://my.linkedin.com/in/chowlyefong" email="chowlyefong@yahoo.com">
         Chow Lye Fong
     </author>
-	<preference name="permissions" value="none" />
+	<content src="index.html" />
+	<!--<preference name="permissions" value="none" /> -->
 	<preference name="orientation" value="portrait" />
 	<preference name="target-device" value="universal" />
 	<preference name="fullscreen" value="true" />
-	<platform name="ios" />
-	<platform name="android" />
 	
 	<icon src="icon.png" />
 	<plugin name="cordova-plugin-inappbrowser" spec="1.3.0" />
 	<plugin name="cordova-plugin-device" spec="1.1.2" />
 	<plugin name="cordova-plugin-splashscreen" spec="3.2.2" />
+	<plugin name="cordova-plugin-whitelist" spec="1" />
+	<access origin="*" />
+	<allow-navigation href="http://*/*" />
+	<allow-navigation href="https://*/*" />
+	<allow-intent href="http://*/*" />
+	<allow-intent href="https://*/*" />
+	
+	<platform name="ios" />
+	<platform name="android">
+		<allow-intent href="tel:*" />
+		<allow-intent href="sms:*" />
+		<allow-intent href="mailto:*" />
+		<allow-intent href="geo:*" />
+	</platform>
 	
 	<plugin name="cordova-plugin-googlemaps" spec="2.0.0">
     <param name="API_KEY_FOR_ANDROID" value="AIzaSyASwH0oIUHsKbbzb0meiScc0QQ1-Ze5jTc" />
