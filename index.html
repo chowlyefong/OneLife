@@ -42,32 +42,33 @@
  var cWorldlimit = 30000;
  
  function initializeMap() {
- 
-	alert(window.navigator.userAgent);
-			//web Map
-            var myLatlng = new google.maps.LatLng( 3.150113, 101.696178 );
-            var myOptions = {
-                zoom: 15,
-                center: myLatlng,
-                mapTypeId: google.maps.MapTypeId.ROADMAP
-            }
-            var mapLoad = new google.maps.Map( document.getElementById( "map_canvas" ), myOptions );
-			var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(3.150113, 101.696178), map: mapLoad, title: 'OCBC KL Main' });
-			myMarker1.setMap(mapLoad);
-			var myMarker2 = new google.maps.Marker({position: new google.maps.LatLng(3.160248, 101.736942), map: mapLoad, title: 'OCBC Jalan Ampang' });
-			myMarker2.setMap(mapLoad);
-			
-			//Cordova plugin Google Map
-			var map;
-			document.addEventListener("deviceready", function() {
-				var div = document.getElementById("map_canvas");
+	var detectPlatform = window.navigator.userAgent;
+	if(detectPlatform.indexOf('Android') > 0 || detectPlatform.indexOf('Mobile') > 0){			
+		//Cordova plugin Google Map
+		var map;
+		document.addEventListener("deviceready", function() {
+			var div = document.getElementById("map_canvas");
 
-				// Initialize the map view
-				map = plugin.google.maps.Map.getMap(div);
+			// Initialize the map view
+			map = plugin.google.maps.Map.getMap(div);
 
-				// Wait until the map is ready status.
-				map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
-			}, false);
+			// Wait until the map is ready status.
+			map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
+		}, false);
+	}else{
+		//web Map
+		var myLatlng = new google.maps.LatLng( 3.150113, 101.696178 );
+		var myOptions = {
+			zoom: 15,
+			center: myLatlng,
+			mapTypeId: google.maps.MapTypeId.ROADMAP
+		}
+		var mapLoad = new google.maps.Map( document.getElementById( "map_canvas" ), myOptions );
+		var myMarker1 = new google.maps.Marker({position: new google.maps.LatLng(3.150113, 101.696178), map: mapLoad, title: 'OCBC KL Main' });
+		myMarker1.setMap(mapLoad);
+		var myMarker2 = new google.maps.Marker({position: new google.maps.LatLng(3.160248, 101.736942), map: mapLoad, title: 'OCBC Jalan Ampang' });
+		myMarker2.setMap(mapLoad);
+	}
  }
  
  //Cordova plugin Google Map
