@@ -1,14 +1,9 @@
-<xml version="1.0" encoding="UTF-8" >
-    <widget xmlns   = "http://www.w3.org/ns/widgets"
-        xmlns:gap   = "http://phonegap.com/ns/1.0"
-        id          = "org.chowlyefong"
-        versionCode = "1"
-        version     = "1.0.0" >
-
-    <name>OCBC OneLife</name>
+<?xml version="1.0" encoding="UTF-8"?>
+    <widget xmlns = "http://www.w3.org/ns/widgets" id = "org.chowlyefong" versionCode = "1" version = "1.0.0" >
+    <name>OneLife</name>
 
     <description>
-        (Prototype) OneLife app for 2017 Digithon Challenge. Developed by Chow Lye Fong
+        OneLife app for 2017 Digithon Challenge. Developed by Chow Lye Fong
     </description>
 
     <author href="https://my.linkedin.com/in/chowlyefong" email="chowlyefong@yahoo.com">
@@ -19,7 +14,8 @@
 	<platform name="android" />
 	
 	<icon src="icon.png" />
+	<plugin name="cordova-plugin-inappbrowser" spec="1.3.0" />
+	<plugin name="cordova-plugin-device" spec="1.1.2" />
+	<plugin name="cordova-plugin-splashscreen" spec="3.2.2" />
 
 </widget>
-
-</xml>
