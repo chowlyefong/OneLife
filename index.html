@@ -53,7 +53,13 @@
 			var div = document.getElementById("map_canvas");
 
 			// Initialize the map view
-			map = plugin.google.maps.Map.getMap(div);
+			var myOptions = {
+			  camera: {
+				target: {lat: 3.150113, lng: 101.696178},
+				zoom: 15
+			  }
+			};
+			map = plugin.google.maps.Map.getMap(div, myOptions);
 
 			// Wait until the map is ready status.
 			map.addEventListener(plugin.google.maps.event.MAP_READY, onMapReady);
