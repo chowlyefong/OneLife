@@ -9,7 +9,10 @@
     <author href="https://my.linkedin.com/in/chowlyefong" email="chowlyefong@yahoo.com">
         Chow Lye Fong
     </author>
-
+	<preference name="permissions" value="none" />
+	<preference name="orientation" value="portrait" />
+	<preference name="target-device" value="universal" />
+	<preference name="fullscreen" value="true" />
 	<platform name="ios" />
 	<platform name="android" />
 	
